@@ -1,0 +1,12 @@
+# Python
+**/__pycache__/
+*.pyc
+
+# Environment
+.env
+Backend/.env
+
+# Frontend
+Frontend/node_modules/
+Frontend/.vite/
+Frontend/dist/
