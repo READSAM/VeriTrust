@@ -32,12 +32,12 @@ export default function App() {
       if (isFile) {
         const formData = new FormData();
         formData.append('file', input);
-        response = await fetch('http://localhost:8000/analyze-file', {
+        response = await fetch('https://veritrust-backend.onrender.com/analyze-file', {
           method: 'POST',
           body: formData,
         });
       } else {
-        response = await fetch('http://localhost:8000/analyze', {
+        response = await fetch('https://veritrust-backend.onrender.com/analyze', {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
           body: JSON.stringify({ image_url: input }),
