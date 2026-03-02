@@ -23,6 +23,11 @@ app.add_middleware(
 
 class VerifyRequest(BaseModel):
     image_url: str
+    
+@app.get("/")
+async def health_check():
+    return {"status": "VeriTrust Backend Online", "version": "1.0.0"}
+
 
 @app.post("/analyze-file")
 async def analyze_local_file(file: UploadFile = File(...)):
@@ -50,3 +55,8 @@ async def analyze_local_file(file: UploadFile = File(...)):
     except Exception as e:
         print(f"File Analysis Error: {e}")
         raise HTTPException(status_code=500, detail=str(e))
+
+if __name__ == "__main__":
+    import uvicorn
+    port = int(os.environ.get("PORT", 8000))
+    uvicorn.run(app, host="0.0.0.0", port=port)
