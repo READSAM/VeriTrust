@@ -67,7 +67,6 @@ export default function App() {
     } catch (error) {
       console.error("Verification Error:", error);
       alert("Failed to reach the VeriTrust Backend on Render. Check if the service is 'Live' and the URL is correct.");
-}
     } finally {
       // THIS IS THE CRITICAL LINE: Stop the loading spinner
       setIsScanning(false); 
