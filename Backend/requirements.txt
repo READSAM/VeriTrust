@@ -6,3 +6,4 @@ pillow
 imagehash
 pytest
 requests-mock
+gunicorn
